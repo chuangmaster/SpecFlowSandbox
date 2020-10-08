@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowSandbox", "SpecFlowSandbox\SpecFlowSandbox.csproj", "{FEEB4522-BDF7-4183-91DB-C413952CFAB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowSandboxTests", "SpecFlowSandboxTests\SpecFlowSandboxTests.csproj", "{F0FE4559-705B-4BD5-AF03-969D3C205E99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEB4522-BDF7-4183-91DB-C413952CFAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEB4522-BDF7-4183-91DB-C413952CFAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEB4522-BDF7-4183-91DB-C413952CFAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEB4522-BDF7-4183-91DB-C413952CFAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0FE4559-705B-4BD5-AF03-969D3C205E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FE4559-705B-4BD5-AF03-969D3C205E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0FE4559-705B-4BD5-AF03-969D3C205E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0FE4559-705B-4BD5-AF03-969D3C205E99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {592291DC-A9CA-46A3-A2E9-6527BB8A592E}
+	EndGlobalSection
+EndGlobal
