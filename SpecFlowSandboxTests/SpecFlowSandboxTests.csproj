@@ -121,11 +121,12 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="BMIHelperSteps.cs" />
     <Compile Include="DatetimehelperSteps.cs" />
-    <Compile Include="DateTimeHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BMIHelper.feature" />
     <None Include="Datetimehelper.feature" />
     <None Include="packages.config" />
   </ItemGroup>
