@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SpecFlowSandbox;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SpecFlowSandboxTests
 {
     [Binding]
     public class BMIHelperSteps
     {
-     private BMIHelper _Sut;
+        private BMIHelper _Sut;
         [BeforeScenario()]
         public void Init()
         {
@@ -22,21 +23,21 @@ namespace SpecFlowSandboxTests
         [Given(@"輸入身高 (.*)")]
         public void Given輸入身高(Decimal p0)
         {
-            ScenarioContext.Current.Set<float>(Convert.ToSingle(p0), "centimeter");
+            ScenarioContext.Current.Set<float>(Convert.ToSingle(p0), "Height");
         }
 
         [Given(@"輸入體重 (.*)")]
         public void Given輸入體重KG(Decimal p0)
         {
-            ScenarioContext.Current.Set<float>(Convert.ToSingle(p0), "kilogram");
+            ScenarioContext.Current.Set<float>(Convert.ToSingle(p0), "Weight");
         }
 
         [When(@"經過BMI計算")]
         public void When經過BMI計算()
         {
-            var centimeter = ScenarioContext.Current.Get<float>("centimeter");
-            var kilogram = ScenarioContext.Current.Get<float>("kilogram");
-            var actual = _Sut.GetBMIHint(centimeter, kilogram);
+            var Height = ScenarioContext.Current.Get<float>("Height");
+            var Weight = ScenarioContext.Current.Get<float>("Weight");
+            var actual = _Sut.GetBMIHint(Height, Weight);
             ScenarioContext.Current.Set<string>(actual, "actual");
         }
 
@@ -48,6 +49,24 @@ namespace SpecFlowSandboxTests
             //驗證計算結果是否合乎預期
             Assert.AreEqual("正常", actual);
 
+        }
+
+        public class BMIData
+        {
+            public decimal Height { get; set; }
+
+            public decimal Weight { get; set; }
+
+        }
+        [Given(@"輸入身高體重")]
+        public void Given輸入身高體重(Table table)
+        {
+            var data = table.CreateSet<BMIData>();
+            foreach (var item in data)
+            {
+                ScenarioContext.Current.Set<float>(Convert.ToSingle(item.Height), "Height");
+                ScenarioContext.Current.Set<float>(Convert.ToSingle(item.Weight), "Weight");
+            }
         }
 
     }
